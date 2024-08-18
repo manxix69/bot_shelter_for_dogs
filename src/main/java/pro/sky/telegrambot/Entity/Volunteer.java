@@ -28,7 +28,7 @@ public class Volunteer {
         this.nickName = nickName;
         this.year = year;
         this.workingFirstTime = workingFirstTime;
-        this.workingLastTime = workingLastTime
+        this.workingLastTime = workingLastTime;
     }
 
     @Override
