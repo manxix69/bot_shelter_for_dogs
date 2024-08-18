@@ -18,14 +18,17 @@ public class Volunteer {
     private String name;
     private String nickName;
     private Integer year;
-    private LocalDateTime workingTime;
+    private LocalDateTime workingFirstTime;
+    private LocalDateTime workingLastTime;
 
-    public Volunteer(Long id, String name, String nickName, Integer year, LocalDateTime workingTime) {
+    public Volunteer(Long id, String name, String nickName, Integer year, LocalDateTime workingFirstTime,
+                     LocalDateTime workingLastTime) {
         this.id = id;
         this.name = name;
         this.nickName = nickName;
         this.year = year;
-        this.workingTime = workingTime;
+        this.workingFirstTime = workingFirstTime;
+        this.workingLastTime = workingLastTime
     }
 
     @Override
@@ -39,5 +42,11 @@ public class Volunteer {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public String toString() {
+        return "id волонтёра: " + this.id + "; Имя волонёра: " + this.name + "; Никнейм волонтёра в телеграме: "
+                + this.nickName + "; Время работы волонтёра: С "
+                + this.workingFirstTime + " до " + this.workingLastTime;
     }
 }
