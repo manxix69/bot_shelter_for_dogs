@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Data
 @Entity
-public class Volunteer {
+public class Volunteers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,8 +21,8 @@ public class Volunteer {
     private LocalDateTime workingFirstTime;
     private LocalDateTime workingLastTime;
 
-    public Volunteer(Long id, String name, String nickName, Integer year, LocalDateTime workingFirstTime,
-                     LocalDateTime workingLastTime) {
+    public Volunteers(Long id, String name, String nickName, Integer year, LocalDateTime workingFirstTime,
+                      LocalDateTime workingLastTime) {
         this.id = id;
         this.name = name;
         this.nickName = nickName;
@@ -31,11 +31,14 @@ public class Volunteer {
         this.workingLastTime = workingLastTime;
     }
 
+    public Volunteers() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Volunteer volunteer = (Volunteer) o;
+        Volunteers volunteer = (Volunteers) o;
         return Objects.equals(id, volunteer.id);
     }
 
